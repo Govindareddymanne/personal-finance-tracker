@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Welcome Back
+
+<!-- Attractive Online Illustration -->
+<img 
+  src="https://undraw.co/api/illustrations/secure_login.svg"
+  alt="Secure Login Illustration"
+  class="page-image">
+
+<form method="POST">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
+
+<div class="center">
+    <a href="{{ url_for('register') }}">New user? Register here</a>
+</div>
+
+</body>
+</html>

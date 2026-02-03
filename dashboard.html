@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Dashboard</h2>
+
+<h3>Balance: ₹{{ balance }}</h3>
+
+<div class="center">
+    <a href="{{ url_for('add_expense') }}">Add Transaction</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Date</th>
+    </tr>
+
+    {% for t in transactions %}
+    <tr>
+        <td>₹{{ t.amount }}</td>
+        <td>{{ t.category }}</td>
+        <td>{{ t.type }}</td>
+        <td>{{ t.created_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
