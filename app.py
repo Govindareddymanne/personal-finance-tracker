@@ -8,7 +8,7 @@ app.secret_key = "finance_secret_key"
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Govind@123",
+    password="password@123",
     database="finance_db"
 )
 cursor = db.cursor(dictionary=True)
@@ -101,5 +101,6 @@ def logout():
     return redirect(url_for("login"))
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False)
+
 
 
